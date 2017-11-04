@@ -25,11 +25,6 @@ class ArticleView : FrameLayout {
                 attrs: AttributeSet?,
                 defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-//    constructor(context: Context?,
-//                attrs: AttributeSet?,
-//                defStyleAttr: Int,
-//                defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
-
     val profileImageView: ImageView by bindView(R.id.profile_image_view)
 
     val titleTextView: TextView by bindView(R.id.title_text_view)

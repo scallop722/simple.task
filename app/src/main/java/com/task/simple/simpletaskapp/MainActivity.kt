@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         listAdapter.articles = listOf(dummyArticle("Kotlin入門", "たろう"),
                 dummyArticle("Java入門", "じろう"))
 
-        val listView: ListView = findViewById<ListView>(R.id.list_view)
+        val listView: ListView = findViewById(R.id.list_view)
         listView.adapter = listAdapter
         listView.setOnItemClickListener { adapterView, view, position, id ->
             val article = listAdapter.articles[position]
