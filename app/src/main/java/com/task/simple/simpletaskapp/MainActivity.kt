@@ -1,6 +1,7 @@
 package com.task.simple.simpletaskapp
 
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.widget.ListView
 import com.task.simple.simpletaskapp.model.Article
@@ -20,6 +21,11 @@ class MainActivity : AppCompatActivity() {
         listView.setOnItemClickListener { adapterView, view, position, id ->
             val article = listAdapter.articles[position]
             ArticleActivity.intent(this, article).let { startActivity(it) }
+        }
+
+        val createButton: FloatingActionButton = findViewById(R.id.create_button)
+        createButton.setOnClickListener { view ->
+            CreateTaskActivity.intent(this).let { startActivity(it) }
         }
     }
 
