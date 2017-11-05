@@ -35,7 +35,6 @@ class TaskView : FrameLayout {
 
     fun setTask(task: Task) {
         titleTextView.text = task.title
-
         profileImageView.setBackgroundColor(Color.RED)
     }
 }

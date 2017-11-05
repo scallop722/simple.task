@@ -7,8 +7,7 @@ import java.sql.Date
 
 fun createUsingCursor(cursor: Cursor): Task =
             Task(cursor.getLong(cursor.getColumnIndex("_id")),
-                    cursor.getString(cursor.getColumnIndex("title")),
-                    null, null,null,null)
+                    cursor.getString(cursor.getColumnIndex("title")))
 
 /**
  * Created by scallop316 on 2017/11/03.
@@ -20,13 +19,13 @@ data class Task(val id: Long,
                 val limitTime: Date?,
                 val estimatedTime: Double?) : Parcelable {
 
-
+    constructor(id: Long, title: String) : this(id, title, null, null, null, null)
 
     companion object {
         @JvmField
         val CREATOR: Parcelable.Creator<Task> = object : Parcelable.Creator<Task> {
             override fun createFromParcel(source: Parcel): Task = source.run {
-                Task(readLong(), readString(), readInt(), readInt(), Date.valueOf(readString()), readDouble())
+                Task(readLong(), readString())
             }
 
             override fun newArray(size: Int): Array<Task?> = arrayOfNulls(size)
@@ -41,6 +40,4 @@ data class Task(val id: Long,
             writeString(title)
         }
     }
-
-
 }
