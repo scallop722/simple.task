@@ -24,17 +24,6 @@
         android:maxLines="2"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        tools:text="記事のタイトル" />
-
-    <TextView
-        android:id="@+id/user_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@id/title_text_view"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/title_text_view"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        tools:text="ユーザの名前"/>
+        tools:text="タスクのタイトル" />
 
 </RelativeLayout>

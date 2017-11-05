@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.task.simple.simpletaskapp.view.ArticleView
-        android:id="@+id/article_view"
+    <com.task.simple.simpletaskapp.view.TaskView
+        android:id="@+id/task_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
