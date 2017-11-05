@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // TODO タスク登録周りが完了次第削除
-        // サンプルデータを追加する
-//        addSampleColmun()
-
         val listAdapter = TaskListAdapter(applicationContext)
         // DBにあるタスクを全件取得する
         listAdapter.tasks = findAll()
@@ -42,28 +38,6 @@ class MainActivity : AppCompatActivity() {
         val createButton: FloatingActionButton = findViewById(R.id.create_button)
         createButton.setOnClickListener { view ->
             CreateTaskActivity.intent(this).let { startActivity(it) }
-        }
-    }
-
-    /**
-     * TODO タスク登録周りが完成次第削除
-     * サンプルデータをDBに挿入します。
-     */
-    private fun addSampleColmun() {
-        val helper = MySQLiteOpenHelper(this)
-        val db: SQLiteDatabase = helper.writableDatabase
-
-        try {
-            db.delete("task", null, emptyArray())
-
-//            for (i in 1..10) {
-//                val values: ContentValues = ContentValues()
-//                values.put("title", "テスト" + i.toString())
-//
-//                db.insert("task", null, values)
-//            }
-        } finally {
-            db.close()
         }
     }
 

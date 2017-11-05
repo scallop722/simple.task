@@ -27,7 +27,7 @@ class CreateTaskActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_task)
 
-        val createButton = findViewById<Button>(R.id.create_button)
+        val createButton: Button = findViewById(R.id.create_button)
         createButton.setOnClickListener {
             val title = create_task_info.task_name_text.text.toString()
 //            val deadime = limit_time_text.toString()
@@ -40,6 +40,11 @@ class CreateTaskActivity : AppCompatActivity() {
             insertValues.put("title", title)
             db.insert("task", null, insertValues)
             db.close()
+            MainActivity.intent(this).let { startActivity(it) }
+        }
+
+        val cancelButton: Button = findViewById(R.id.cancel_button)
+        cancelButton.setOnClickListener {
             MainActivity.intent(this).let { startActivity(it) }
         }
     }
