@@ -9,12 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.task.simple.simpletaskapp.R
 import com.task.simple.simpletaskapp.bindView
-import com.task.simple.simpletaskapp.model.Article
+import com.task.simple.simpletaskapp.model.Task
 
 /**
  * Created by scallop316 on 2017/11/03.
  */
-class ArticleView : FrameLayout {
+class TaskView : FrameLayout {
 
     constructor(context: Context?) : super(context)
 
@@ -29,15 +29,12 @@ class ArticleView : FrameLayout {
 
     val titleTextView: TextView by bindView(R.id.title_text_view)
 
-    val userNameTextView: TextView by bindView(R.id.user_name_text_view)
-
     init {
-        LayoutInflater.from(context).inflate(R.layout.view_article, this)
+        LayoutInflater.from(context).inflate(R.layout.view_task, this)
     }
 
-    fun setArticle(article: Article) {
-        titleTextView.text = article.title
-        userNameTextView.text = article.user.name
+    fun setTask(task: Task) {
+        titleTextView.text = task.title
 
         profileImageView.setBackgroundColor(Color.RED)
     }
