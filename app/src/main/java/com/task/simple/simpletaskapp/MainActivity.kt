@@ -1,6 +1,8 @@
 package com.task.simple.simpletaskapp
 
 import android.content.ContentValues
+import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -11,13 +13,20 @@ import com.task.simple.simpletaskapp.model.createUsingCursor
 
 class MainActivity : AppCompatActivity() {
 
+
+    companion object {
+
+        fun intent(context: Context): Intent =
+                Intent(context, MainActivity::class.java)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // TODO タスク登録周りが完了次第削除
         // サンプルデータを追加する
-        addSampleColmun()
+//        addSampleColmun()
 
         val listAdapter = TaskListAdapter(applicationContext)
         // DBにあるタスクを全件取得する
@@ -47,12 +56,12 @@ class MainActivity : AppCompatActivity() {
         try {
             db.delete("task", null, emptyArray())
 
-            for (i in 1..10) {
-                val values: ContentValues = ContentValues()
-                values.put("title", "テスト" + i.toString())
-
-                db.insert("task", null, values)
-            }
+//            for (i in 1..10) {
+//                val values: ContentValues = ContentValues()
+//                values.put("title", "テスト" + i.toString())
+//
+//                db.insert("task", null, values)
+//            }
         } finally {
             db.close()
         }
