@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_create_task.*
 import kotlinx.android.synthetic.main.activity_create_task.view.*
 import kotlinx.android.synthetic.main.activity_main.*

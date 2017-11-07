@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="名前" />
+        android:text="名前"/>
 
     <EditText
         android:id="@+id/limit_time_text"
